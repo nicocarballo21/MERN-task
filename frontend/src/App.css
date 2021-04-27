@@ -1,0 +1,13 @@
+#descripcion-input {
+    resize: none;
+    height: 200px;
+}
+
+.card {
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.btn-outline-danger {
+    margin-left: 5px;
+}
