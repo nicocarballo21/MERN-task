@@ -24,7 +24,6 @@ class App extends Component {
   addTareas = (e) => {
     e.preventDefault()
     if (this.state._id) {
-      console.log("entre")
       axios
         .put(`${URL_API}/edit/${this.state._id}`, {
           titulo: this.state.titulo,
@@ -69,10 +68,10 @@ class App extends Component {
         })
         .catch(() => {
           swal.fire({
-            text: "Error al agendar tarea",
+            text: "Excedio la cantidad de caracteres maximos",
             icon: "error",
             showConfirmButton: false,
-            timer: 900
+            timer: 1200
           })
         })
         .then(() => {
@@ -201,7 +200,7 @@ class App extends Component {
                             onClick={() => {
                               this.updateTareas(tarea._id)
                             }}
-                            className="btn btn-outline-primary ml-2"
+                            className="btn btn-primary "
                           >
                             Editar
                           </button>
@@ -209,7 +208,7 @@ class App extends Component {
                             onClick={() => {
                               this.deleteTarea(tarea._id)
                             }}
-                            className="btn btn-outline-danger"
+                            className="btn btn-danger"
                           >
                             Eliminar
                           </button>
